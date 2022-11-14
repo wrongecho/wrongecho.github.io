@@ -23,3 +23,5 @@ Get-AzResourceGroup | Where-Object {$_.Tags.status -ne "protected"} #| Remove-Az
 6. Test the runbook and ensure the output shows all the "unprotected" resource groups you'd like to remove
 7. Once you're happy, remove the comment from the second line and test the script removes the resource groups as expected
 8. Publish your runbook and add/link a schedule to run nightly (e.g. 2 AM)
+
+![automation-rg.png](/img/2022-11-14-labbing-safely-azure/automation-rg.png)
