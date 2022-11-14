@@ -4,7 +4,7 @@ Labbing in the Cloud can be dangerous!
 
 Whilst Azure budget alerts are a great indicator that you've left something running, I'd really prefer to have everything clean itself up automatically after me.
 
-Luckily enough, we can use Azure Automation Accounts to automatically run a PowerShell one-liner to clean-up all resource groups every night!
+Luckily enough, we can use Azure [Automation Accounts](https://learn.microsoft.com/en-us/azure/automation/automation-create-standalone-account?tabs=azureportal) to automatically run a PowerShell one-liner to clean-up all resource groups every night!
 
 > Note: The first 500 minutes of automation every month are free!
 
