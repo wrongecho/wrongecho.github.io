@@ -9,10 +9,10 @@ Luckily enough, we can use Azure Automation Accounts to automatically run a Powe
 > Note: The first 500 minutes of automation every month are free!
 
 1. Create a new resource group for your automation (e.g. automation-rg)
-1. Tag existing resource groups you'd like to keep (including automation-rg) with status:protected
-1. Create a new automation account in automation-rg
-1. Assign the service principal Owner/Contributor permissions for your subscription
-1. Create a PowerShell runbook with the following commands:
+2. Tag existing resource groups you'd like to keep (including automation-rg) with status:protected
+3. Create a new automation account in automation-rg
+4. Assign the service principal Owner/Contributor permissions for your subscription
+5. Create a PowerShell runbook with the following commands:
 
 ```
 Connect-AzAccount -Identity
@@ -21,5 +21,5 @@ Get-AzResourceGroup | Where-Object {$_.Tags.status -ne "protected"} #| Remove-Az
 ```
 
 6. Test the runbook and ensure the output shows all the "unprotected" resource groups you'd like to remove
-1. Once you're happy, remove the comment from the second line and test the script removes the resource groups as expected
-1. Publish your runbook and add/link a schedule to run nightly (e.g. 2 AM)
+7. Once you're happy, remove the comment from the second line and test the script removes the resource groups as expected
+8. Publish your runbook and add/link a schedule to run nightly (e.g. 2 AM)
