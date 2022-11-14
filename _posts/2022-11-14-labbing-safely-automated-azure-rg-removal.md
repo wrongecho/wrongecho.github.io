@@ -8,10 +8,11 @@ Luckily enough, we can use Azure Automation Accounts to automatically run a Powe
 
 > Note: The first 500 minutes of automation every month are free!
 
-1. Create a new resource group for your automation (e.g. automation-rg)
-1. Tag existing resource groups you'd like to keep (including automation-rg) with status:protected
-1. Create a new automation account in automation-rg
+1. Create a new resource group for your automation (e.g. `automation-rg`)
+1. Tag existing resource groups you'd like to keep (including `automation-rg`) with `status`:`protected`
+1. Create a new automation account in `automation-rg`
 1. Assign the service principal Owner/Contributor permissions for your subscription
+![iam.png](/img/2022-11-14-labbing-safely-azure/iam.png)
 1. Create a PowerShell runbook with the following commands:
 
     ```
