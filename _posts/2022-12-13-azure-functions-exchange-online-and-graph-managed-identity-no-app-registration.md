@@ -58,9 +58,11 @@ Import-Module Microsoft.Graph.Users -UseWindowsPowershell # Optional
 ```
 
 To connect to Exchange Online, just use the `ManagedIdentity` parameter and specify your onmicrosoft domain:
+
 `Connect-ExchangeOnline -ManagedIdentity -Organization 'yourdomain.onmicrosoft.com'`
 
-To connect to MS Graph, you need to retrieve an access token using the Az.Accounts module, and pass it using the `AccessToken` parameter. Scopes are handled automatically.:
+To connect to MS Graph, you need to retrieve an access token using the Az.Accounts module, and pass it using the `AccessToken` parameter. Scopes are handled automatically:
+
 `Connect-MgGraph -AccessToken (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com/").Token`
 
 And we're done!
