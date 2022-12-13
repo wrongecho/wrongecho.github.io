@@ -29,7 +29,7 @@ $appRoleID = "dc50a0fb-09a3-484d-be87-e023b12c6440"
 
 # Resource ID -  Get the Service Principal associated with the Exchange Online resource
 ## you'll sometimes see this app ID in the browser when accessing Exchange admin center
-$resourceID = (Get-MgServicePrincipal -Filter "AppId eq '00000002-0000-0ff1-ce00-000000000000').Id
+$resourceID = (Get-MgServicePrincipal -Filter "AppId eq '00000002-0000-0ff1-ce00-000000000000'").Id
 
 # Put it together to generate a service principal for Exchange
 New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentity -PrincipalId $managedIdentity -AppRoleId $appRoleID -ResourceId $resourceID
