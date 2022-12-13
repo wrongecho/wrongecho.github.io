@@ -1,4 +1,4 @@
-## Connecting to Exchange Online & MS Graph PowerShell with Managed Identities using Azure Functions
+## Connecting to Exchange Online and MS Graph PowerShell with Managed Identities using Azure Functions
 
 Azure Functions are part of Azure's PaaS "Serverless" compute services that enable you to easily run code in a variety of languages (Node, JavaScript, Python, PowerShell) in the cloud.
 
