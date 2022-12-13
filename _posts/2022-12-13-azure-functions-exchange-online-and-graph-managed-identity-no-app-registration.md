@@ -39,7 +39,7 @@ Once this is complete, the managed identity is now able to be assigned Exchange-
 
 ![exchange-sp.png](/img/2022-12-13-func-managed-id/exchange-sp.png)
 
-### Graph
+### MS Graph
 
 Thankfully, assigning permissions for MS Graph is a little more straightforward - just add the service principal to the role.
 
@@ -57,10 +57,10 @@ Import-Module Microsoft.Graph.Authentication -UseWindowsPowershell # UseWindowsP
 Import-Module Microsoft.Graph.Users -UseWindowsPowershell # Optional
 ```
 
-To connect to Exchange Online, just use the ManagedIdentity param and specify your onmicrosoft domain:
+To connect to Exchange Online, just use the `ManagedIdentity` parameter and specify your onmicrosoft domain:
 `Connect-ExchangeOnline -ManagedIdentity -Organization 'yourdomain.onmicrosoft.com'`
 
-To connect to MS Graph, you need to retrieve an access token using the Az.Accounts module:
+To connect to MS Graph, you need to retrieve an access token using the Az.Accounts module, and pass it using the `AccessToken` parameter. Scopes are handled automatically.:
 `Connect-MgGraph -AccessToken (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com/").Token`
 
 And we're done!
