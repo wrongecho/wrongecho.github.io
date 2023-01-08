@@ -2,6 +2,8 @@
 
 Labbing in the Cloud can be dangerous! We've all heard stories about accidently leaving a resource running overnight and then waking up to a 5k bill.
 
+![meme.jpg](/img/2022-11-14-labbing-safely-azure/meme.jpg)
+
 Whilst Azure budget alerts are a great indicator that you've left something running, I'd really prefer to have everything clean itself up automatically after me.
 
 Luckily enough, we can use Azure [Automation Accounts](https://learn.microsoft.com/en-us/azure/automation/automation-create-standalone-account?tabs=azureportal) to automatically run a PowerShell one-liner to clean-up all resource groups every night!
