@@ -2,7 +2,7 @@
 
 Labbing in the Cloud can be dangerous! We've all heard stories about accidently leaving a resource running overnight and then waking up to a 5k bill.
 
-![meme.jpg](/img/2022-11-14-labbing-safely-azure/meme.jpg)
+![meme.png](/img/2022-11-14-labbing-safely-azure/meme.png)
 
 Whilst Azure budget alerts are a great indicator that you've left something running, I'd really prefer to have everything clean itself up automatically after me.
 
