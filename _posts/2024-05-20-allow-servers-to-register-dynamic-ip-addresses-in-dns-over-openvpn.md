@@ -1,6 +1,7 @@
 ## Allowing servers to register with DNS over VPN
 
-I had a scenario where I have multiple OVH virtual private servers (VPSs) that need some basic connectivity back to my HQ. I want my remote servers to register themselves in DNS to allow for easy management, patching, and monitoring, but I don't want to maintain a list of static IPs. Since the servers are "cost-effective" VPSs (rather than OVH "public cloud" instances), they are not eligible for vRack networking. Instead, I have to configure each server/VM as a VPN client terminating on my HQ OPNSense Firewall.
+I had a scenario where I have multiple OVH virtual private servers (VPSs) that need some basic connectivity back to my HQ. I want my remote servers to register themselves in DNS to allow for easy management, patching, and monitoring, but I don't want to maintain a list of static IPs. 
+Since the servers are "cost-effective" VPSs (rather than OVH "public cloud" instances), they are not eligible for vRack networking. Instead, I have to configure each server/VM as a VPN client terminating on my HQ OPNSense Firewall.
 
 ### VPN
 
