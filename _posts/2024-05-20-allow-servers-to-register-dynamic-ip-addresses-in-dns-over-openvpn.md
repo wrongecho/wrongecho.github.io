@@ -1,7 +1,6 @@
 ## Allowing servers to register with DNS over VPN
 
-I had a scenario where I have multiple OVH virtual private servers (VPSs) that need some basic connectivity back to my HQ. I want my remote servers to register themselves in DNS to allow for easy management, patching, and monitoring, but I don't want to maintain a list of static IPs. 
-Since the servers are "cost-effective" VPSs (rather than OVH "public cloud" instances), they are not eligible for vRack networking. Instead, I have to configure each server/VM as a VPN client terminating on my HQ OPNSense Firewall.
+I had a scenario where I have multiple OVH virtual private servers (VPSs) that need some basic connectivity back to my HQ. I want my remote servers to register themselves in DNS to allow for easy management, patching, and monitoring, but I don't want to maintain a list of static IPs. Since the servers are "cost-effective" VPSs (rather than OVH "public cloud" instances), they are not eligible for vRack networking. Instead, I have to configure each server/VM as a VPN client terminating on my HQ OPNSense Firewall.
 
 ### VPN
 
@@ -36,4 +35,6 @@ The script must be included in the client VPN config to be run each time the tun
     script-security 2
     up /etc/openvpn/register-dns.sh
 
-I couldn't find loads about this online, (presumably because it's an unusual scenario) but thought I'd share the experience to potentially save others time and to remind myself how this works when it inevitably breaks!
+![dns.png](/img/2024-05-20-allow-servers-to-register-dynamic-ip/dns.png)
+
+I couldn't find loads about this online (presumably because it's an unusual scenario), so thought I'd share the experience to potentially save others time and to remind myself how this works when it inevitably breaks!
