@@ -19,7 +19,6 @@ First, I created a separate DNS zone named `ovh.internal.X.co.uk` and configured
 After some time experimenting with different options, I eventually wrote a small script to force each server to register itself in DNS each time the VPN connection is made. The quirk I found with this is that OpenVPN UP scripts see to prevent the VPN tunnel connecting until they successfully complete. But as `nsupdate` needs connectivity to a DC to register itself in DNS, I found myself in a Catch-22. 
 The solution was to background the script and schedule it to run in a few minutes time, which seems to allow the VPN connection to complete and then register the server in DNS afterwards.
 
-    ```
     /etc/openvpn/register-dns.sh:-
     
     #!/bin/bash
@@ -28,14 +27,12 @@ The solution was to background the script and schedule it to run in a few minute
     echo "update add $(hostname).ovh.internal.X.co.uk. 600 a $ip" >> register-dns-nsupdatecmd.txt
     echo "send" >> register-dns-nsupdatecmd.txt
     nsupdate register-dns-nsupdatecmd.txt | at now + 1 minute &
-    ```
     
 The script must be included in the client VPN config to be run each time the tunnel connects
-    ```
+
     /etc/openvpn/vpn.conf:-
     
     script-security 2
     up /etc/openvpn/register-dns.sh
-    ```
 
 I couldn't find loads about this online, (presumably because it's an unusual scenario) but thought I'd share the experience to potentially save others time and to remind myself how this works when it inevitably breaks!
