@@ -2,8 +2,9 @@
 
 A brief note for when I eventually forget this.
 
-```
 Recently ran into an issue where my paperless-ngx server was running out of disk space. This appeared to be caused by Docker's overlay. 
+
+```
 root@paperless:/home/# df -h
 Filesystem      Size  Used Avail Use% Mounted on
 tmpfs           382M  1.7M  381M   1% /run
